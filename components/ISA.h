@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <iostream>
 
-enum Opcode : int { OP_NOP = 0, OP_ADD, OP_LW, OP_SW };
+enum Opcode : int { OP_NOP = 0, OP_ADD, OP_LW, OP_SW, OP_WFI};
 
 struct Instr {
     Opcode op;
@@ -110,6 +110,7 @@ inline const char* op_name(Opcode o) {
         case OP_ADD: return "ADD";
         case OP_LW: return "LW";
         case OP_SW: return "SW";
+        case OP_WFI: return "WFI";
         default: return "NOP";
     }
 }

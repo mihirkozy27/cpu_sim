@@ -1,0 +1,4 @@
+*.o
+pipestages/*.o
+components/*.o
+cpu_sim

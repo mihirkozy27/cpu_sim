@@ -9,6 +9,11 @@ void WritebackStage::writeback(const MEM_WB& mem_wb) {
         rf.schedule_write(mem_wb.instr.rd, mem_wb.mem_data);
     }
 
+    if (mem_wb.instr.op == OP_WFI) {
+        std::cout << "WFI retired. Stopping simulation." << std::endl;
+        sc_stop();
+    }
+
     if (writeback_first) {
         rf.commit();
     }
